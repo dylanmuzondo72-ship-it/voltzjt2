@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voltz JT | Zimbabwe Hip-Hop Artist</title>
+  <meta name="description" content="Official-style portfolio website concept for Voltz JT, Zimbabwe hip-hop artist. Music, bookings, gallery, awards, streaming and MAGEEZ merch checkout." />
+  <meta property="og:title" content="Voltz JT | Zimbabwe Hip-Hop Artist" />
+  <meta property="og:description" content="Music, bookings, gallery, awards, streaming and MAGEEZ merch checkout." />
+  <meta property="og:image" content="assets/hero.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#070707;
+      --bg2:#11110f;
+      --ink:#f6f2e9;
+      --muted:#aaa397;
+      --line:rgba(255,255,255,.12);
+      --gold:#d7a84f;
+      --red:#e63535;
+      --green:#20c56b;
+      --glass:rgba(255,255,255,.08);
+      --shadow:0 30px 90px rgba(0,0,0,.55);
+      --radius:28px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;background:
+      radial-gradient(circle at top left,rgba(215,168,79,.13),transparent 34%),
+      radial-gradient(circle at 75% 20%,rgba(230,53,53,.11),transparent 28%),
+      linear-gradient(180deg,#050505,#11100d 45%,#070707);
+      color:var(--ink);font-family:Inter,system-ui,sans-serif;overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .noise{position:fixed;inset:0;pointer-events:none;opacity:.08;z-index:99;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E")}
+    .nav{
+      position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:50;
+      width:min(1120px,calc(100% - 24px));display:flex;align-items:center;justify-content:space-between;
+      padding:12px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(7,7,7,.58);
+      backdrop-filter:blur(18px);box-shadow:0 18px 60px rgba(0,0,0,.25)
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.08em}
+    .brand span{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--red),var(--gold));color:#090909}
+    .navlinks{display:flex;gap:6px;align-items:center}
+    .navlinks a{font-size:13px;color:var(--muted);padding:9px 12px;border-radius:999px;transition:.25s}
+    .navlinks a:hover{background:rgba(255,255,255,.08);color:var(--ink)}
+    .cart-pill{background:var(--ink)!important;color:#090909!important;font-weight:800}
+    .hero{
+      min-height:100svh;display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;
+      padding:118px max(22px,calc((100vw - 1180px)/2)) 70px;position:relative;
+    }
+    .hero-copy{position:relative;z-index:3}
+    .eyebrow{display:inline-flex;gap:10px;align-items:center;color:var(--gold);font-weight:900;text-transform:uppercase;letter-spacing:.18em;font-size:12px}
+    .pulse{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(32,197,107,.6);animation:pulse 1.8s infinite}
+    @keyframes pulse{70%{box-shadow:0 0 0 14px rgba(32,197,107,0)}100%{box-shadow:0 0 0 0 rgba(32,197,107,0)}}
+    h1{font-family:"Bebas Neue",Impact,sans-serif;font-size:clamp(78px,13vw,178px);line-height:.82;margin:22px 0 14px;letter-spacing:.02em}
+    .grad{background:linear-gradient(90deg,var(--ink),var(--gold),var(--red));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:clamp(17px,2vw,22px);line-height:1.55;color:#d9d2c6;max-width:650px}
+    .cta-row{display:flex;flex-wrap:wrap;gap:13px;margin-top:28px}
+    .btn{border:1px solid var(--line);border-radius:999px;padding:14px 18px;font-weight:900;display:inline-flex;align-items:center;gap:10px;transition:.3s;cursor:pointer;background:transparent;color:var(--ink)}
+    .btn.primary{background:var(--ink);color:#080808}
+    .btn.red{background:var(--red);border-color:var(--red)}
+    .btn:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.3)}
+    .hero-card{position:relative;min-height:620px;border-radius:40px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);isolation:isolate}
+    .hero-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transform:scale(1.03);animation:kenburns 14s ease-in-out infinite alternate}
+    @keyframes kenburns{to{transform:scale(1.13) translate3d(-16px,-10px,0)}}
+    .hero-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,.65))}
+    .float-badge{position:absolute;right:22px;bottom:22px;z-index:4;background:rgba(0,0,0,.55);border:1px solid var(--line);backdrop-filter:blur(18px);border-radius:24px;padding:18px;max-width:270px;animation:float 4.5s ease-in-out infinite}
+    @keyframes float{50%{transform:translateY(-12px)}}
+    .float-badge strong{font-family:"Bebas Neue";font-size:38px;color:var(--gold)}
+    .ticker{border-block:1px solid var(--line);overflow:hidden;background:rgba(255,255,255,.035)}
+    .ticker-track{display:flex;gap:36px;width:max-content;animation:scroll 28s linear infinite;padding:15px 0;font-family:"Bebas Neue";font-size:38px;color:rgba(255,255,255,.72)}
+    .ticker span{white-space:nowrap}
+    @keyframes scroll{to{transform:translateX(-50%)}}
+    section{padding:92px max(22px,calc((100vw - 1180px)/2))}
+    .section-head{display:flex;justify-content:space-between;gap:22px;align-items:end;margin-bottom:28px}
+    h2{font-family:"Bebas Neue";font-size:clamp(46px,7vw,92px);line-height:.9;margin:0}
+    .sub{color:var(--muted);max-width:560px;line-height:1.7}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .card{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));box-shadow:0 16px 50px rgba(0,0,0,.22);transform:translateY(22px);opacity:0;transition:.7s}
+    .card.show{transform:none;opacity:1}
+    .card b{font-size:32px;color:var(--gold);font-family:"Bebas Neue";font-weight:400}
+    .card p{color:var(--muted);line-height:1.55}
+    .stream-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .spotify-frame{border-radius:24px;overflow:hidden;border:1px solid var(--line);background:#121212;min-height:352px}
+    iframe{border:0;width:100%}
+    .platforms{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .platform{padding:18px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;transition:.25s}
+    .platform:hover{background:rgba(215,168,79,.12);transform:translateX(6px)}
+    .gallery{columns:3 260px;column-gap:16px}
+    .shot{break-inside:avoid;margin:0 0 16px;border-radius:26px;overflow:hidden;border:1px solid var(--line);position:relative;background:#111}
+    .shot img{width:100%;transition:.55s}
+    .shot:hover img{transform:scale(1.08)}
+    .merch-wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:22px;align-items:start}
+    .product{border:1px solid var(--line);border-radius:34px;overflow:hidden;background:rgba(255,255,255,.05);box-shadow:var(--shadow)}
+    .checkout{border:1px solid var(--line);border-radius:34px;padding:24px;background:rgba(255,255,255,.07)}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    input,select,textarea{width:100%;padding:15px;border-radius:16px;border:1px solid var(--line);background:rgba(0,0,0,.35);color:var(--ink);outline:none}
+    textarea{min-height:116px;resize:vertical;grid-column:1/-1}
+    label{font-size:12px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.12em}
+    .full{grid-column:1/-1}
+    .total{font-size:44px;font-family:"Bebas Neue";color:var(--gold);margin:14px 0}
+    .booking{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px}
+    .booking-panel{border:1px solid var(--line);border-radius:34px;padding:24px;background:linear-gradient(135deg,rgba(230,53,53,.13),rgba(215,168,79,.09))}
+    .footer{padding:42px max(22px,calc((100vw - 1180px)/2));border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;color:var(--muted);flex-wrap:wrap}
+    .whatsapp-float{position:fixed;right:18px;bottom:18px;z-index:60;background:#25D366;color:#06140b;border-radius:999px;padding:15px 18px;font-weight:950;box-shadow:0 18px 50px rgba(37,211,102,.32)}
+    @media(max-width:880px){
+      .hero,.stream-grid,.merch-wrap,.booking{grid-template-columns:1fr}
+      .hero-card{min-height:520px}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .navlinks a:not(.cart-pill){display:none}
+    }
+    @media(max-width:560px){
+      .cards,.platforms,.form-grid{grid-template-columns:1fr}
+      .hero-card{min-height:430px}
+      h1{font-size:82px}
+    }
+  </style>
+</head>
+<body>
+<div class="noise"></div>
+
+<nav class="nav">
+  <a href="#" class="brand"><span>V</span> VOLTZ JT</a>
+  <div class="navlinks">
+    <a href="#music">Music</a><a href="#awards">Awards</a><a href="#gallery">Gallery</a><a href="#booking">Booking</a><a href="#merch" class="cart-pill">Merch</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><i class="pulse"></i> Zimbabwe Hip-Hop Artist</div>
+    <h1>VOLTZ<br><span class="grad">JT</span></h1>
+    <p class="lead">A sharp Zimbabwe hip-hop voice built on story, identity, street-level honesty, and serious stage presence. This portfolio pulls together the music, visuals, booking access, and MAGEEZ merch into one polished hub.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#music">▶ Stream Music</a>
+      <a class="btn red" href="#booking">Book Artist</a>
+      <a class="btn" href="#merch">Shop MAGEEZ</a>
+    </div>
+  </div>
+
+  <div class="hero-card" data-tilt>
+    <img src="assets/hero.jpg" alt="Voltz JT portrait">
+    <div class="float-badge">
+      <strong>MAGEEZ</strong>
+      <p>Music, motion, merch and booking, all in one place. Finally, a website behaving like it has ambition.</p>
+    </div>
+  </div>
+</header>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span>ZIM HIP HOP</span><span>•</span><span>MAGEEZ</span><span>•</span><span>LIVE BOOKINGS</span><span>•</span><span>STREAM NOW</span><span>•</span>
+    <span>ZIM HIP HOP</span><span>•</span><span>MAGEEZ</span><span>•</span><span>LIVE BOOKINGS</span><span>•</span><span>STREAM NOW</span><span>•</span>
+  </div>
+</div>
+
+<section id="awards">
+  <div class="section-head">
+    <h2>Profile & Impact</h2>
+    <p class="sub">The site copy is written like a proper artist portfolio, not random placeholder soup. It positions Voltz JT as a modern Zimbabwe hip-hop brand with music, influence, merch and performance value.</p>
+  </div>
+  <div class="cards">
+    <div class="card"><b>01</b><h3>Zimbabwe Hip-Hop</h3><p>Recognised for shaping a powerful local sound with Shona expression, sharp delivery and youth-culture relevance.</p></div>
+    <div class="card"><b>02</b><h3>Award-Level Presence</h3><p>Built a reputation through standout releases, headline conversations, strong visuals and industry recognition.</p></div>
+    <div class="card"><b>03</b><h3>Brand Power</h3><p>The MAGEEZ identity gives the music a merchandise lane, fan culture and visual language beyond just songs.</p></div>
+    <div class="card"><b>04</b><h3>Bookings Ready</h3><p>Designed for promoters, festivals, brand activations, campus shows, private events and media inquiries.</p></div>
+  </div>
+</section>
+
+<section id="music">
+  <div class="section-head">
+    <h2>Stream Voltz JT</h2>
+    <p class="sub">Streaming integration replaces the local MP3 player. Better for plays, analytics, legitimacy, and avoiding the ancient human tradition of losing files in random folders.</p>
+  </div>
+  <div class="stream-grid">
+    <div class="spotify-frame">
+      <iframe style="border-radius:24px" src="https://open.spotify.com/embed/artist/73S4ITxiY2WkZ3OoVWaokg?utm_source=generator" height="352" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    <div class="platforms">
+      <a class="platform" href="https://open.spotify.com/artist/73S4ITxiY2WkZ3OoVWaokg" target="_blank"><strong>Spotify</strong><span>Open →</span></a>
+      <a class="platform" href="https://music.apple.com/search?term=Voltz%20JT" target="_blank"><strong>Apple Music</strong><span>Search →</span></a>
+      <a class="platform" href="https://www.youtube.com/results?search_query=Voltz+JT" target="_blank"><strong>YouTube</strong><span>Watch →</span></a>
+      <a class="platform" href="https://audiomack.com/search?q=Voltz%20JT" target="_blank"><strong>Audiomack</strong><span>Listen →</span></a>
+      <a class="platform" href="https://www.instagram.com/voltz_jtmusic/" target="_blank"><strong>Instagram</strong><span>Follow →</span></a>
+      <a class="platform" href="https://www.facebook.com/Voltzjechatrapmusic" target="_blank"><strong>Facebook</strong><span>Connect →</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="section-head">
+    <h2>Visual Gallery</h2>
+    <p class="sub">Clean editorial layout, motion hover, no face-cutting nonsense. Humanity survives another CSS battle.</p>
+  </div>
+  <div class="gallery">
+    <figure class="shot"><img src="assets/gallery-01.jpg" alt="Voltz JT balcony portrait"></figure>
+    <figure class="shot"><img src="assets/gallery-02.jpg" alt="Voltz JT seated portrait"></figure>
+    <figure class="shot"><img src="assets/gallery-03.jpg" alt="Voltz JT sunglasses portrait"></figure>
+    <figure class="shot"><img src="assets/gallery-04.jpg" alt="Voltz JT with fans"></figure>
+    <figure class="shot"><img src="assets/gallery-05.jpg" alt="Voltz JT studio moment"></figure>
+    <figure class="shot"><img src="assets/gallery-06.jpg" alt="Voltz JT black outfit"></figure>
+    <figure class="shot"><img src="assets/gallery-07.jpg" alt="Voltz JT close portrait"></figure>
+  </div>
+</section>
+
+<section id="merch">
+  <div class="section-head">
+    <h2>MAGEEZ Merch Checkout</h2>
+    <p class="sub">This is a front-end checkout experience. It collects an order, calculates totals, and prepares the customer for payment confirmation. To make it fully live, connect Stripe, Paynow, PayPal, Ecocash partner gateway, or Shopify Buy Button.</p>
+  </div>
+  <div class="merch-wrap">
+    <div class="product">
+      <img src="assets/merch.jpg" alt="MAGEEZ merchandise shirts">
+    </div>
+    <div class="checkout">
+      <h3>MAGEEZ Shirt Drop</h3>
+      <p class="sub">Choose your size, color and quantity. The checkout creates a clean order summary. No chaotic “dm me bro” energy unless you choose the WhatsApp backup.</p>
+      <div class="form-grid">
+        <div><label>Full Name</label><input id="custName" placeholder="Your name"></div>
+        <div><label>Phone</label><input id="custPhone" placeholder="+263..."></div>
+        <div><label>Size</label><select id="size"><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select></div>
+        <div><label>Color</label><select id="color"><option>Black</option><option>Grey</option><option>Cream</option></select></div>
+        <div><label>Quantity</label><input id="qty" type="number" min="1" value="1"></div>
+        <div><label>Delivery Area</label><input id="area" placeholder="Harare, Chitungwiza, etc."></div>
+      </div>
+      <div class="total" id="total">$25</div>
+      <div class="cta-row">
+        <button class="btn primary" onclick="checkoutOrder()">Proceed to Checkout</button>
+        <button class="btn" onclick="whatsappMerch()">WhatsApp Backup</button>
+      </div>
+      <p id="orderNote" class="sub"></p>
+    </div>
+  </div>
+</section>
+
+<section id="booking">
+  <div class="section-head">
+    <h2>Book Voltz JT</h2>
+    <p class="sub">For promoters, festivals, club nights, brand launches and private events. The form builds a professional booking email and WhatsApp message.</p>
+  </div>
+  <div class="booking">
+    <div class="booking-panel">
+      <h3>Booking Contact</h3>
+      <p><strong>Management:</strong> +263 776 251 900</p>
+      <p><strong>Email:</strong> voltzjtmanagement@gmail.com</p>
+      <p class="sub">Replace these with confirmed management details before publishing. Accuracy is not decoration, despite what the internet keeps proving daily.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="mailto:voltzjtmanagement@gmail.com?subject=Voltz%20JT%20Booking%20Inquiry">Email Management</a>
+        <a class="btn" href="https://wa.me/263776251900?text=Hello%2C%20I%20want%20to%20book%20Voltz%20JT." target="_blank">WhatsApp</a>
+      </div>
+    </div>
+    <form class="booking-panel" onsubmit="event.preventDefault(); sendBooking();">
+      <div class="form-grid">
+        <div><label>Name</label><input id="bookName" required placeholder="Your name"></div>
+        <div><label>Contact</label><input id="bookContact" required placeholder="Phone or email"></div>
+        <div><label>Event Type</label><input id="eventType" required placeholder="Festival, club, brand launch"></div>
+        <div><label>Event Date</label><input id="eventDate" type="date" required></div>
+        <div class="full"><label>Location</label><input id="location" required placeholder="Venue + city"></div>
+        <textarea id="details" placeholder="Budget, expected audience, performance length, technical setup"></textarea>
+      </div>
+      <button class="btn primary" type="submit">Create Booking Message</button>
+      <p id="bookingNote" class="sub"></p>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <strong>VOLTZ JT • Zimbabwe Hip-Hop</strong>
+  <span>Website concept by Core Web Systems</span>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/263776251900" target="_blank">WhatsApp</a>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach((entry,i)=>{
+      if(entry.isIntersecting){
+        setTimeout(()=>entry.target.classList.add('show'), i*120);
+      }
+    })
+  },{threshold:.18});
+  cards.forEach(card=>observer.observe(card));
+
+  const tilt = document.querySelector('[data-tilt]');
+  if(tilt){
+    tilt.addEventListener('mousemove', (e)=>{
+      const r = tilt.getBoundingClientRect();
+      const x = ((e.clientX - r.left)/r.width - .5) * 10;
+      const y = ((e.clientY - r.top)/r.height - .5) * -10;
+      tilt.style.transform = `perspective(900px) rotateY(${x}deg) rotateX(${y}deg)`;
+    });
+    tilt.addEventListener('mouseleave', ()=> tilt.style.transform = 'perspective(900px) rotateY(0) rotateX(0)');
+  }
+
+  const qty = document.getElementById('qty');
+  const total = document.getElementById('total');
+  function updateTotal(){
+    const q = Math.max(1, parseInt(qty.value || '1'));
+    total.textContent = '$' + (q * 25);
+  }
+  qty.addEventListener('input', updateTotal);
+
+  function orderText(){
+    const q = Math.max(1, parseInt(qty.value || '1'));
+    return `MAGEEZ Merch Order%0AName: ${encodeURIComponent(custName.value)}%0APhone: ${encodeURIComponent(custPhone.value)}%0ASize: ${size.value}%0AColor: ${color.value}%0AQuantity: ${q}%0ADelivery Area: ${encodeURIComponent(area.value)}%0ATotal: $${q*25}`;
+  }
+
+  function checkoutOrder(){
+    const q = Math.max(1, parseInt(qty.value || '1'));
+    orderNote.innerHTML = `Order created: <strong>${q} MAGEEZ shirt(s)</strong>, total <strong>$${q*25}</strong>. Connect a payment gateway here for live card/mobile-money checkout.`;
+    // Replace this with your real payment gateway URL when ready:
+    window.open(`mailto:voltzjtmanagement@gmail.com?subject=MAGEEZ%20Merch%20Order&body=${orderText()}`, '_blank');
+  }
+
+  function whatsappMerch(){
+    window.open(`https://wa.me/263776251900?text=${orderText()}`, '_blank');
+  }
+
+  function sendBooking(){
+    const msg = `Voltz JT Booking Inquiry%0AName: ${encodeURIComponent(bookName.value)}%0AContact: ${encodeURIComponent(bookContact.value)}%0AEvent Type: ${encodeURIComponent(eventType.value)}%0ADate: ${eventDate.value}%0ALocation: ${encodeURIComponent(location.value)}%0ADetails: ${encodeURIComponent(details.value)}`;
+    bookingNote.innerHTML = "Booking message created. Opening WhatsApp and email options.";
+    window.open(`https://wa.me/263776251900?text=${msg}`, '_blank');
+    window.open(`mailto:voltzjtmanagement@gmail.com?subject=Voltz%20JT%20Booking%20Inquiry&body=${msg.replaceAll('%0A','%0D%0A')}`, '_blank');
+  }
+</script>
+</body>
+</html>
